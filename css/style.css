@@ -1,0 +1,602 @@
+body {
+	margin: 0; padding: 0; /* annulation des marges */
+	/*overflow: hidden; /* on cache le débordement de contenu */
+	color: #fff;
+	background: #000;
+	overflow-x: hidden;
+}
+#wrap {
+	/* position du conteneur pour le préparer à bouger */
+	position: relative;
+	top: 0;
+	/* on prépare la transition à venir */
+	-webkit-transition: top 1.4s cubic-bezier(.49,.22,.52,1);
+}
+#nav {
+	/* on fixe le menu en haut */
+	z-index: 1000;
+	position: fixed;
+	top: 0; left: 0; right: 0;
+	padding: 1%;
+	margin: 0;
+	/* on centre les liens */
+	text-align: center;
+	background-color: white; 
+	text-decoration: none;
+	border-bottom: 3px solid red;
+	box-shadow: 10px 10px 33px -3px rgba(0,0,0,0.41);
+}
+#nav li {
+	/* on aligne les éléments de liste */
+	display: inline;
+	margin:0;
+	text-decoration: none;
+
+}
+#nav a {
+	/* on applique des marges aux liens */
+	display: inline-block;
+	margin: 0 3em;
+	color: black;
+	/* on applique une petite lueur */
+	text-shadow: 0 0 5px #fff;
+	/* on prévoit une petite transition (lueur) */
+	transition: all 1s;
+	text-decoration: none;
+	font-family: 'News Cycle', sans-serif;
+	font-weight: bold;
+	margin-top: -70px;
+
+}
+#nav a:hover{
+	font-size: 18px;
+	color: red;
+}
+#appareil img{
+	width: 100px;
+	margin-left: -85%;
+	margin-top: -30px;
+	margin-bottom: -50px;
+}
+@keyframes slide{
+	0%{background-image: url(http://img00.deviantart.net/4083/i/2016/004/f/c/_k__by_xxbone-d9mpnku.jpg);}
+	25%{background-image: url(http://img09.deviantart.net/3cea/i/2016/004/9/1/_k__by_xxbone-d9mpns3.jpg);}
+	40%{background-image: url(http://img00.deviantart.net/59c4/i/2017/013/d/3/katelyn_vancouver_wa_portland_oregon_boudoir_by_olgieshmolgie-dava8an.png);}
+	60%{background-image: url(http://img03.deviantart.net/8884/i/2016/271/1/a/hard_flor__model_test_shot__by_aledgan-daj5nti.jpg);}
+	80%{background-image: url(http://img07.deviantart.net/ba6d/i/2016/288/1/8/so__model_test_shot__by_aledgan-dal2d81.jpg);}
+	100%{background-image: url(http://www.ntalyphotography.com/wp-content/uploads/2013/03/photographie-boudoir-noir-et-blanc-femme.jpg);}
+	
+}
+#slide4 {
+    width: 100%;
+    background-image: url(http://img00.deviantart.net/4083/i/2016/004/f/c/_k__by_xxbone-d9mpnku.jpg);
+    animation-name: slide;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+/* slides */
+#slide1, #slide2, #slide3, #slide4{
+	/* height à adapter avec media queries */
+	height: 1000px;
+	padding-top:100px;
+	/* préparation des transitions */
+	-webkit-transition: top 1.4s cubic-bezier(.49,.22,.52,1);
+	border-bottom: 2px dashed red;
+}
+/* attribution des images de fond */
+#slide1 { background:url(http://www.cityhdwallpapers.com/wp-content/uploads/2016/April/8/United%20States/New%20York/1920x1200/The-GW-Bridge-1-New-York-city-HD-wallpaper-1920x1200.jpg) center 0 no-repeat fixed; background-size: cover; }
+#slide2 { background: url(https://s-media-cache-ak0.pinimg.com/originals/1e/ff/6d/1eff6d82a23aa6a6b4cf4dd9aa264b20.jpg) center 0 no-repeat fixed; background-size: cover;}
+#slide3 { background: url(http://img07.deviantart.net/3a34/i/2011/092/f/d/manhattan_bridge_by_2_0_1_9-d3d0n5h.jpg) center 0 no-repeat fixed; background-size: cover;}
+#slide4{background: url(http://img00.deviantart.net/4083/i/2016/004/f/c/_k__by_xxbone-d9mpnku.jpg)center 0 no-repeat fixed; background-size: cover;}
+/* Contenus des slides */
+.slide_inside {
+	width: 770px;
+	margin: 0 auto;
+	position: relative;
+	background-color: rgba(0, 0, 0, .6);
+	padding: 40px;
+}
+#slide1 .slide_inside {
+	font-size: 30px;
+	height: 15%;
+	font-family: 'News Cycle', sans-serif;
+	margin-top: 14%;
+	color: rgba(255, 255, 255, 0.7); 
+	width: 100%;
+	/*background-color: transparent;*/
+}
+#slide1 .slide_inside h5{
+	margin-top: -0%; 
+}
+.slide_inside:hover{
+	background-color: rgba(0, 0, 0, .4);
+}
+#slide1 .slide_inside p{
+	float: right;
+	margin-top: -1%;
+	margin-right: 5%;
+	color: white;
+	font-family: 'Pinyon Script', cursive;
+}
+#slide2 .slide_inside p {
+	
+	text-align: justify;
+	margin-top: 5%;
+	font-size: 20px;
+}
+#slide2 .slide_inside h2{
+	font-family: 'News Cycle', sans-serif;
+	font-size: 30px;
+}
+span{
+	color: red;
+	font-size: 40px;
+}
+#slide2 .slide_inside{
+	margin-top: 17%;
+	padding: 5%;
+	border: 2px solid red;
+}
+#slide3 .slide_inside {
+	margin-top: 200px;
+}
+form {
+    /* Pour le centrer dans la page */
+    margin: 0 auto;
+    width: 600px;
+    height: 300px;
+    /* Pour voir les limites du formulaire */
+    padding: 1em;
+    border: 5px double #CCC;
+    margin-top: 20%;
+    padding-top: 1%;
+    padding-left: 4%;
+    background-color: rgba(0, 0, 0, .7); 
+    box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.32);
+}
+form div + div {
+    margin-top: 1em;
+}
+label {
+    /* Afin de s'assurer que toutes les étiquettes aient la même dimension et soient alignées correctement */
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+}
+input, textarea {
+    /* Afin de s'assurer que tous les champs textuels utilisent la même police
+       Par défaut, textarea utilise une police à espacement constant */
+    font: 1em sans-serif;
+    font-size: 20px;
+
+    /* Pour donner la même dimension à tous les champs textuels */
+    width: 400px;
+    height: 30px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    /* Pour harmoniser l'apparence des bordures des champs textuels */
+    border: 1px solid red;
+    box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.32);
+}
+input:focus, textarea:focus {
+    /* Afin de rehausser les éléments actifs */
+    border: 2px solid red;
+    box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.32);
+}
+textarea {
+    /* Pour aligner correctement les champs multilignes et leurs étiquettes */
+    vertical-align: top;
+
+    /* Pour donner assez d'espace pour entrer du texte */
+    height: 150px;
+
+    /* Pour permettre aux utilisateurs de redimensionner un champ textuel horizontalement
+       Cela ne marche pas avec tous les navigateurs  */
+    resize: vertical;
+}
+.button {
+    /* Pour positionner les boutons de la même manière que les champs textuels */
+    padding-left: 103px; /* même dimension que les étiquettes */
+    height: 20px;
+}
+button{
+	height: 40px;
+	width: 200px;
+	color: white;
+	background-color: rgba(159, 0, 0, 0.6);
+	border: 1px solid white;
+	box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.32);
+}
+#contact h6{
+	margin-left: 40%;
+	margin-bottom: -15%;
+	font-family: 'Pinyon Script', cursive;
+	font-size: 60px;
+	color: white;
+	text-shadow: black 1px 1px, black -1px 1px, black -1px -1px, black 1px -1px; 
+	border-bottom: 3px solid red;
+	width: 26%;
+}
+#contact{
+	margin-top: -10%;
+}
+/* décalage du conteneur vers le haut */
+#s2:target ~ #wrap {
+	top:-1000px;
+}
+/* décalage des fonds de chaque slide */
+#s2:target ~ #wrap #slide1 { background-position: 50% 36%; }
+#s2:target ~ #wrap #slide2 { background-position: 50% 0%; }
+#s2:target ~ #wrap #slide3 { background-position: 50% -30%; }
+ 
+
+/* vers Slide 1 */
+#s1:target ~ #wrap { top:0px; }
+#s1:target ~ #wrap #nav li:first-child a { text-shadow: 0 0 5px #eca603, 0 0 5px #eca603, 0 0 5px #eca603, 0 0 5px #eca603; }
+#s1:target ~ #wrap #slide1 { background-position: 50% 0%; }
+#s1:target ~ #wrap #slide2 { background-position: 50% -35%; }
+#s1:target ~ #wrap #slide3 { background-position: 50% -60%; }
+#s1:target ~ #wrap #trooper { left: -180px; top: 300px; transform: rotate(10deg); }
+#s1:target ~ #wrap #clone { left: -280px; top: 300px; transform: rotate(10deg); }
+ 
+/* vers Slide 3 */
+#s3:target ~ #wrap { top:-2150px; }
+#s3:target ~ #wrap #nav li:last-child a { text-shadow: 0 0 5px #eca603, 0 0 5px #eca603, 0 0 5px #eca603, 0 0 5px #eca603; }
+#s3:target ~ #wrap #slide1 { background-position: 50% 60%; }
+#s3:target ~ #wrap #slide2 { background-position: 50% 35%; }
+#s3:target ~ #wrap #slide3 { background-position: 50% 0%; }
+#s3:target ~ #wrap #trooper { left:-1500px;top:-1000px; transform: rotate(-15deg); }
+#s3:target ~ #wrap #clone { left:-1000px;top: -800px; transform: rotate(-15deg); }
+
+/*//////////////////////////////////////////////////////////////// CV ///////////////////////////////////////////////////////////////////*/
+#titreTriangle{
+	margin-top: 30%;
+}
+#titreTriangle2{
+	margin-top: 15%;
+}
+#triangle{
+	margin-top: -24.1%;
+	margin-left: 49.7%;
+}
+#triangle2{
+	margin-top: -54.2%;
+	margin-left: -9.8%;
+}
+#triangle3{
+	margin-top: -24.1%;
+	margin-left: 49.7%;
+}
+#triangle4{
+	margin-top: -54.5%;
+	margin-left: -10%;
+}
+.parallax{
+	background-image:url(http://www.picz.ge/img/s3/1610/24/a/a20b086ce51e.jpg) ;  
+	height: 600px;
+	background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    overflow-y: hidden;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+#animation{
+	height: 600px;
+	background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    overflow-y: hidden;
+    animation-name: block;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+ .header{
+ 	height: 500px;
+}
+.header h1{
+	text-align: center;
+	color: white;
+	font-size: 45px;
+	padding-top: 9%;
+	font-family: 'Julius Sans One', sans-serif;
+}
+.header p{
+	text-align: center;
+	color: white;
+	font-family: 'Pinyon Script', cursive;
+	font-size: 30px;
+	margin-top: 3vh;
+}
+
+@keyframes block{
+	0%{background-color: rgba(0, 0, 0, 0.1);} 
+	50%{background-color: rgba(0, 0, 0, 0.6);}
+	100%{background-color: rgba(0, 0, 0, 0.1);}
+}
+#Un{
+	height: 300vh;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E6F1FF), color-stop(200, #708AA1));
+	background-size: cover;
+	margin-top: -8vh;
+	box-shadow: 10px 10px 129px 9px rgba(0,0,0,0.58);
+}
+
+#body{
+	background-color: #c2c9d3;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+#imglogo{
+	width: 25%;
+	margin-left: 31%;
+}
+.cs-text {
+	font-size: 10px;
+	text-transform: uppercase;
+	margin: 140px auto 0 auto;
+	width: 500px;
+	height: 100px;
+	padding-left: 20px;
+	font-family: 'Julius Sans One', sans-serif;
+	font-weight: 300;
+	position: relative;
+	margin-top: 25vh;
+	  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+  -webkit-animation-duration: 1s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes slideInLeft {
+  0% {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  } 
+.cs-text span {
+	cursor: default;
+	display: block;
+	float: left;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	margin: 0 0 0 -20px;
+	color: rgba(255,255,255,0.95);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.1);
+	transition: all 0.4s ease-in-out;
+}
+.cs-text span:nth-child(odd) {
+	background-color: rgba(67, 76, 92, 1);
+}
+
+.cs-text span:nth-child(even) {
+	background-color: rgba(255, 0, 0, 0.3); 
+}
+
+}
+.cs-text span:last-child{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -50px;
+	z-index: 100;
+	background: url(../images/codrops_logo.jpg) no-repeat center center;
+}
+.cs-text:hover span:not(:last-child){
+	transform: translate(0%);
+	opacity: 1;
+}
+.cs-text:hover span:last-child {	
+}
+#pacman h1{
+	text-align: center;
+	font-family: 'Julius Sans One', sans-serif;
+	font-weight: 900;
+	font-size: 2em;
+	vertical-align: middle;
+	padding: 5px;
+}
+
+#comp{
+	margin-top: 3vh;
+	text-align: center;
+	margin-bottom: 15vh;
+	box-shadow: 0px 12px 36px -3px rgba(82,81,82,1);
+}
+/*.bandeau{
+	height: 60vh;
+	margin-left: -15px;
+	margin-right: -15px;
+	background-image: url(http://www.walldevil.com/wallpapers/a94/iron-man-red-art-awesome-wallpapers-comics-miscellaneous-wallpaper.jpg);
+	background-size: contain;
+	margin-top: 15vh;
+}*/
+#comp img{
+	margin-top: 5.5vh;
+-webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes zoomIn {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  50% {
+  opacity: 1;
+  }
+  } 
+@keyframes jogeHTML{
+	0%{width: 15%;} 
+	100%{width: 60%;}
+}
+@keyframes jogeCSS{
+	0%{width: 15%;} 
+	100%{width: 80%;}
+}
+@keyframes jogeJS{
+	0%{width: 15%;} 
+	100%{width: 40%;}
+}
+.joge{
+	width: 100%;
+	height: 5vh;
+	background-color: black;
+	margin-top: 7vh;
+	border-radius: 150px;
+	border:2px solid white;
+
+}
+.jogeCss{
+	width: 100%;
+	height: 5vh;
+	background-color: black;
+	margin-top: 7vh;
+	border-radius: 150px;
+	border:3px solid grey;
+}
+#html{
+	background-color: grey;	
+	height: 50vh;
+}
+.niveauHTML{
+	width: 60%;
+	height: 4.5vh;
+	background-color: #d15329;
+	border-radius: 150px;
+	animation-name: jogeHTML;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+.niveauHTML:after { 
+    content: '|||||||||||||';
+    display: block;
+    position: absolute;
+    height: 4.5vh;
+    width: 80%;
+    overflow: hidden;
+    border-radius: 180px;
+    transform: skewX(-30deg);
+    font: bold 120px/80px sans-serif;
+    letter-spacing: -6px;
+    color: #000;
+    opacity: 0.1;
+}
+#css{
+	background-color: white;
+	color: black;
+	height: 50vh;
+	border-left: 2px solid red;
+}
+.niveauCSS{
+	width: 80%;
+	height: 4.5vh;
+	background-color: #347dc1;
+	border-radius: 150px;
+	animation-name: jogeCSS;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+.niveauCSS:after { 
+    content: '|||||||||||||';
+    display: block;
+    position: absolute;
+    height: 4.5vh;
+    width: 80%;
+    overflow: hidden;
+    border-radius: 180px;
+    transform: skewX(-30deg);
+    font: bold 120px/80px sans-serif;
+    letter-spacing: -6px;
+    color: #000;
+    opacity: 0.1;
+}
+#js{
+	background-color: grey;
+	height: 50vh;
+	border-left: 2px solid red;
+}
+.niveauJS{
+	width: 40%;
+	height: 4.5vh;
+	background-color: #e0b341;
+	border-radius: 150px;
+	animation-name: jogeJS;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+.niveauJS:after { 
+    content: '|||||||||||||';
+    display: block;
+    position: absolute;
+    height: 4.5vh;
+    width: 80%;
+    overflow: hidden;
+    border-radius: 180px;
+    transform: skewX(-30deg);
+    font: bold 120px/80px sans-serif;
+    letter-spacing: -6px;
+    color: #000;
+    opacity: 0.1;
+}
+#js img{
+	margin-top: 4.5vh;
+}
+
+.bouton{
+  border: #b20000 1px solid;
+  color: red;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 150ms ease-in-out;
+  transition: 0.5s;
+  height: 10vh;
+  width: 35%;
+  margin-top: 10vh;
+  margin-left: 31%;
+
+ }
+  
+ .bouton:after {
+    content: '';
+    border: none;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background-color: #a33030;
+    background-size: cover;
+    transition: 
+    box-shadow: -1px 1px 19px 7px rgba(222,16,16,1);s;
+    z-index: -1;
+    transition: width 150ms ease-in-out;
+  }
+  
+ .bouton:hover h1{
+    color: white;
+    transition: 0.5s;
+ }
+.bouton:hover:after {
+      width: 110%;
+    }
